@@ -1,23 +1,27 @@
 {
-  "name": "fivem-ts-boilerplate",
-  "version": "2.0.0",
-  "description": "A boilerplate for TypeScript in FiveM by Whitigol#2122",
-  "main": "index.js",
-  "scripts": {
-    "build": "npm run clearbuild && npm run typecheck && node build/build-bundle.js",
-    "clearbuild": "rimraf ./dist",
-    "typecheck": "tsc --noEmit -p client/tsconfig.json && tsc --noEmit -p server/tsconfig.json",
-    "watch": "npm run clearbuild && cross-env IS_WATCH_MODE=1 node build/build-bundle.js"
-  },
-  "author": "Whitigol <whitetigerwolfthe1st@gmail.com>",
-  "license": "CUSTOM",
-  "devDependencies": {
-    "@citizenfx/client": "^2.0.6063-1",
-    "@citizenfx/server": "^2.0.6063-1",
-    "@types/node": "^16.18.3",
-    "cross-env": "^7.0.3",
-    "esbuild": "^0.15.15",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.9.3"
-  }
+    "name": "fivem-ts-template-new",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "build": "npx tsc && npm run bundle && node builder.js",
+        "generateConfig": "npx quicktype --src-lang json --lang ts --src src/config.json --out types/config.d.ts --just-types",
+        "watch": "nodemon --watch src --exec \"npm run build\"",
+        "bundle": "webpack --config webpack.config.js"
+    },
+    "devDependencies": {
+        "@citizenfx/client": "^2.0.6379-1",
+        "@citizenfx/server": "^2.0.6379-1",
+        "@types/node": "^18.15.11",
+        "glob": "^10.0.0",
+        "javascript-obfuscator": "^4.0.2",
+        "nodemon": "^2.0.22",
+        "typescript": "^5.0.4",
+        "webpack": "^5.78.0",
+        "webpack-cli": "^5.0.1"
+    },
+    "nodemonConfig": {
+        "ext": "js,ts,lua,json"
+    },
+    "dependencies": {}
 }
