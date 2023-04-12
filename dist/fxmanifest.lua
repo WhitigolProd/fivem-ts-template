@@ -12,3 +12,5 @@ server_scripts {'server/bundle.js'}
 shared_scripts {'shared/bundle.js'}
 
 files {'config.json'}
+
+-- NO SCRIPT CONFIGURATION IS FOUND IN ANY FILES BESIDES config.json
