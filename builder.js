@@ -107,7 +107,7 @@ function RunObfuscator() {
             deadCodeInjection: true,
             deadCodeInjectionThreshold: 1,
             debugProtection: false,
-            disableConsoleOutput: true,
+            disableConsoleOutput: false,
         });
 
         fs.writeFileSync(file, obfuscate.getObfuscatedCode());
